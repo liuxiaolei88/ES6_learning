@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a;
+    let b, c, d;
+    let e = 100;
+    let f = 512, g = 'hi', h = []
+    // let 特性
+    //     1.let变量不能重复声明，但var 可以
+
+    //     2.块级作用域
+    // {
+        // let xx = 1
+    // }
+    // console.log(xx)//使用let不能输出，只在{}内有效，但使用var可以
+
+    //     3.不存在变量提升
+    //     console.log(yy) //var输出undefined，let不允许这么使用会报错
+    // let yy = 1
+//          4.不影响作用域链
+    {
+        let school = 'x'
+        function f1() {
+            console.log(school)
+        }
+        f1()//可以正确输出x
+    }
+
+</script>
+
+</body>
+</html>
