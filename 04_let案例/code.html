@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .item{
+      border-top-style:dotted;
+      border-right-style:solid;
+      border-bottom-style:dotted;
+      border-left-style:solid;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <p class="item">111</p>
+  <p class="item">111</p>
+  <p class="item">111</p>
+</div>
+<script>
+  let items = document.getElementsByClassName('item')
+
+  for(let i=0;i<items.length;i++){
+    items[i].onclick = function () {
+      this.style.background = 'pink'
+      console.log(this)//输出this为当前点击的元素
+      // 如果用var i 则在循环结束过后，i一直等于3，不会因为点击时事件的改变而改变，当点击事件触发时，只会调用function，此时作用域就只有function里面的，无法找到i
+      // 改成let后，相当于
+        // {
+        //     let i=0
+        // items[i].onclick = function () {}
+        // }
+        //i对于函数体是独立的，可以访问
+
+      console.log(i)
+      console.log(items[i])
+    }
+  }
+</script>
+
+</body>
+</html>
