@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //ES6 允许按照一定模式从数组和对象中提取值，对变量进行赋值，即解构赋值
+    // 1：数组的结构
+    const f = ['熊大', '熊二', '熊三', '熊四']
+    let [a, b, c, d] = f
+    console.log(a)
+
+    // 2：对象的解构
+    const bear = {
+        name:'熊大',
+        eat:function () {
+            console.log('ear')
+        }
+    }
+    // 可以直接把里面的name赋值给外面定义的name，但是二者名称需要一样
+    let {name,eat} = bear
+    console.log(name)
+    console.log(eat)
+    eat()
+
+</script>
+</body>
+</html>
