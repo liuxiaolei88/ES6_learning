@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //给对象添加symbol类型属性的方法
+    // 添加方式一：
+    let game = {}
+    let methods = {
+        up: Symbol()
+    };
+    game[methods.up] = function () {
+        console.log('up')
+    }
+    console.log(game) //game里会有symbol类型的方法
+    //   添加方式二：
+    let obj = {
+        [Symbol('say')]: function () {
+
+        }
+    }
+    console.log(obj)
+</script>
+</body>
+</html>
