@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    //拓展运算符的作用
+    //   1.数组的合并
+    const arr1 = ['a','b']
+    const arr2 = ['c','d']
+    const con = [...arr1,...arr2]
+    console.log(con) //
+    //   2.数组的克隆
+    /*
+    * 1).浅拷贝:JavaScript存储对象都是存地址的，所以浅复制会导致 a 和 b 指向同一块内存地址,
+    * 数组的赋值其实相当于给了索引，改变其中一个变量其他引用都会改变
+    * 2).深拷贝：返回数组的一个副本（相当于另外开辟内存空间），所以并不会改变数组本身的的值
+    *
+    * */
+    const cop = [...con]
+    console.log(cop)
+    //   3.将数组转换成真正的数组
+    const divs = document.querySelectorAll('div');
+    console.log(divs) //这里为nodelist
+    const divarr = [...divs]
+    console.log(divarr)//此时的divarr是真实的dom
+
+</script>
+</body>
+</html>
