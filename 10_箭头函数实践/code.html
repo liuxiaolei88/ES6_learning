@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .d{
+      width: 200px;
+      height: 200px;
+      background: darksalmon;
+    }
+  </style>
+</head>
+<body>
+<div class="d" id="id"></div>
+<div class="d" id="id2"></div>
+<script>
+  let id = document.getElementById('id')
+  id.addEventListener('click',function () {
+    let that = this
+    // 普通函数在绑定的时候this是指向id的，但是真正函数体执行的时候就找不到this了，所以需要一个变量记录this值给函数调用
+    setTimeout(function () {
+      that.style.background = 'pink'
+    })
+  },2000)
+
+  let id2 = document.getElementById('id2')
+  id2.addEventListener('click',function () {
+    // 由于箭头函数this静态，this指向定义的对象，即id2，所以可以直接操作
+    setTimeout( () => {
+      this.style.background = 'pink'
+    })
+  },2000)
+
+  // 输出数组中的偶数
+  const arr = [1,2,3,4,5,6]
+  // 箭头函数适合与this无关的回调，定时器和数组方法的回调
+  // 箭头函数不适合与this有关的回调，事件回调，方法回调
+  const result = arr.filter(item =>item % 2 ===0)
+  console.log(result)
+
+
+
+
+</script>
+</body>
+</html>
