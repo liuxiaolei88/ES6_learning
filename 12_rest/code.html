@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //rest参数 ...args,如果有多个参数需要将...args放到最后
+  function fn(a,b,...args) {
+    console.log(a)//输出1
+    console.log(b)//输出2
+    console.log(args)//输出[3,4,5]
+  }
+ fn(1,2,3,4,5)
+</script>
+</body>
+</html>
