@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 允许大括号内直接写入变量和函数，当名字相同是可以不用写name=name，写成name就可以，函数可以省略function关键字
+    let name = '熊'
+    let eat = function () {
+        console.log('eat')
+    }
+    const obj ={
+        name,
+        eat,
+        sleep(){
+            console.log('sleep')
+        }
+
+    }
+</script>
+
+</body>
+</html>
