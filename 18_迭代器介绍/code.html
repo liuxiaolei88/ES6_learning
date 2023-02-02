@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 迭代器工作原理
+    *   1 创建一个指针对象，指向当前数据结构的起始位置
+    *   2 第一次调用对象的next方法，指针自动指向数据结构的第一个成员
+    *   3 接下来不断调用next方法，指针一直在往后移动，一直到最后一个成员
+    *   4 每调用next方法返回一个包含value和done属性的对象,done到最后一个元素就会变成 true
+    *
+    * */
+    const x = ['a','b','c']
+
+    let iterator = x[Symbol.iterator]()
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+    console.log(iterator.next())
+
+</script>
+</body>
+</html>
