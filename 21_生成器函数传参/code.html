@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function *f(arg) {
+    // console.log(arg)
+    let one = yield 111
+    console.log('我是fone: ', one)//one变量的值为two，即第二次调用next函数传的值
+    let two = yield 222
+    console.log('我是ftwo',two)
+  }
+  // 为整个函数传递参数
+  let i = f('整体传参')
+  // 第一次调用,返回value = 111,done=false,111是yield的值
+  console.log(i.next('one'))
+  console.log(i.next('two'))
+
+</script>
+</body>
+</html>
