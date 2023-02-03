@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const stu = {
+            name:'a',
+            cla:[
+                'c',
+                'd',
+                'e'
+            ],
+            [Symbol.iterator](){
+                let index = 0
+                let that = this
+                return{
+                    next:function () {
+                        if(index<that.cla.length){
+                            const  res = {
+                                value:that.cla[index],
+                                done:false
+                            }
+                            index ++
+                            return res
+                        }else{
+                            return {
+                                value:undefined,
+                                done:true
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        for (let v of stu){
+            console.log(v)
+        }
+    </script>
+</body>
+</html>
