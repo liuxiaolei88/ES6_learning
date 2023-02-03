@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function *f() {
+    console.log(111)
+    yield 'one'
+    console.log(222)
+    yield 'two'
+  }
+  // 一个特殊的函数
+  let g = f();
+  // 每调用一次next函数就执行一部分yield
+  g.next()
+  for(let v of f()){
+    console.log(v)
+  }
+</script>
+</body>
+</html>
