@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = new Map()
+    m.set('name','name')
+    m.set('eat',function () {
+        console.log('麦门')
+    })
+    // 对象也可以作为一个key
+    let key = {
+        loc : 'loc'
+    }
+    m.set(key,['b','s','g'])
+    console.log(m)
+
+    // 大小
+    console.log(m.size)
+    //  删除 .delete
+//     获取 .get
+</script>
+</body>
+</html>
